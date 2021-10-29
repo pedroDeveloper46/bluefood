@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueFood</title>
+    <link rel="stylesheet" type="text/css" href="CSS/bf_estiloSistema.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="divLogotipo">
+
+            <span class="spanAuxiliarAlinhamentoVertical"></span>
+            <a href="">
+                <img src="images/bf_logotipoSistema.png" class="imgLogo" />
+            </a>
+
+        </div>
+
+        <div class="usuarioLogado">
+            Olá Nome do Usúario
+            
+            
+        </div>
+    </header>
+
+    <br><br>
+    <!--Fim do cabeçalho-->
+
+    <div>
+        <h1>Relatório dos Pedidos</h1>
+
+        <fieldset>
+            <legend>Filtros</legend>
+            <label for="numero">Número:</label><br>
+            <input type="text" name="numero" id="numero"><br>
+
+            <label for="inicio">Início:</label><br>
+            <input type="date" name="inicio" id="inicio"><br>
+
+            <label for="fim">Fim:</label><br>
+            <input type="date" name="fim" id="fim"><br><br>
+
+            <input type="button" value="Buscar">
+
+
+        </fieldset>
+    </div>
+    <br><br>
+
+    <table>
+        <tr>
+            <th>Pedido</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Valor</th>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="#6598"></td>
+            <td>Pedro</td>
+            <td>Rua Noel Rosa</td>
+            <td>R$130,00</td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="#1859"></td>
+            <td>Carlos</td>
+            <td>Rua Martins Fontes</td>
+            <td>R$30,00</td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="#9059"></td>
+            <td>Júlia Silva</td>
+            <td>Rua Sebastião Guilherme</td>
+            <td>R$33,00</td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="#3487"></td>
+            <td>Lucas</td>
+            <td>Rua A</td>
+            <td>R$45,00</td>
+        </tr>
+
+
+    </table>
+    <br><br>
+
+    <input type="button" value="Voltar">
+
+
+    <!--Inicio do Rodapé-->
+
+</body>
+
+</html>

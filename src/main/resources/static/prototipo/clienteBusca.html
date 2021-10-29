@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueFood</title>
+    <link rel="stylesheet" type="text/css" href="CSS/bf_estiloSistema.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="divLogotipo">
+
+            <span class="spanAuxiliarAlinhamentoVertical"></span>
+            <a href="">
+                <img src="images/bf_logotipoSistema.png" class="imgLogo" />
+            </a>
+
+        </div>
+
+        <div class="usuarioLogado">
+            Olá Nome do Usúario
+            <br>
+            <img src="images/bf_iconeCarrinho.png" class="imgCarrinho">
+        </div>
+    </header>
+
+    <br><br>
+
+    <!--Fim do cabeçalho-->
+
+    <div>
+        <h1>É hora de Rangar!!</h1>
+
+        <form method="POST" action="">
+            <fieldset>
+                <input type="text" name="busca" placeholder="Buscar Por...">
+                <input type="button" value="Procurar">
+
+            </fieldset>
+        </form>
+    </div>
+    <br>
+
+    <div class="categoriasComidasOpcaoGeral">
+        <div class="categoriasComidasOpcao">
+            <a href="">
+                <img src="images/sys_categoriaChurrasco.png" alt="" class="imgComidaOpcao"><br>
+                <span>Churrasco</span>
+            </a>
+        </div>
+
+        <div class="categoriasComidasOpcao">
+            <a href="">
+                <img src="images/sys_categoriaHamburguer.png" alt="" class="imgComidaOpcao"><br>
+                <span>Hambuguer</span>
+            </a>
+        </div>
+
+        <div class="categoriasComidasOpcao">
+            <a href="">
+                <img src="images/sys_categoriaPizza.png" alt="" class="imgComidaOpcao"><br>
+                <span>Pizza</span>
+            </a>
+        </div>
+
+        <div class="categoriasComidasOpcao">
+            <a href="">
+                <img src="images/sys_categoriaSalada.png" alt="" class="imgComidaOpcao"><br>
+                <span>Salada</span>
+            </a>
+        </div>
+
+        <div class="categoriasComidasOpcao">
+            <a href="">
+                <img src="images/sys_categoriaSobremesa.png" alt="" class="imgComidaOpcao"><br>
+                <span>Sobremesa</span>
+            </a>
+        </div>
+
+    </div>
+
+    <div>
+        <h1>Resultados</h1>
+        <fieldset>
+            <legend>Filtros</legend>
+            <input type="button" value="Entrega Grátis"><br>
+            <input type="button" value="Maior Preço" ><input type="button" value="Menor Preço"><br>
+            <input type="button" value="Maior Taxa" ><input type="button" value="Menor Taxa"><br>
+            <input type="button" value="Maior Tempo" ><input type="button" value="Menor Tempo" id="inputSelecionado">
+
+        </fieldset>
+    </div>
+
+    <div>
+        <div class="restauranteOpcao">
+            <a href="clienteRestaurante.html" >
+                <img src="images/sys_restauranteBubgerKirg.png" class="imgOpcao">
+                <br>
+                <span class="tituloRestaurante">Nome do Restaurante</span>
+                <br>
+                <span>Categoria de Comida</span>
+                <br>
+                <span>Taxa de Entrega: R$15,00</span>
+                <br>
+                <span>Tempo de Entrega: 40 min</span>
+            </a>
+        </div>
+        <br><br>
+
+        <div class="restauranteOpcao">
+            <a href="">
+                <img src="images/sys_restauranteMcNaldos.png" class="imgOpcao">
+                <br>
+                <span class="tituloRestaurante">Nome do Restaurante</span>
+                <br>
+                <span>Categoria de Comida</span>
+                <br>
+                <span>Taxa de Entrega: R$15,00</span>
+                <br>
+                <span>Tempo de Entrega: 40 min</span>
+            </a>
+        </div>
+        <br><br>
+
+        <div class="restauranteOpcao">
+            <a href="">
+                <img src="images/sys_restauranteSbubby.png" class="imgOpcao">
+                <br>
+                <span class="tituloRestaurante">Nome do Restaurante</span>
+                <br>
+                <span>Categoria de Comida</span>
+                <br>
+                <span>Taxa de Entrega: R$15,00</span>
+                <br>
+                <span>Tempo de Entrega: 40 min</span>
+            </a>
+        </div>
+        <br><br>
+
+        <div class="restauranteOpcao">
+            <a href="">
+                <img src="images/sys_restaurantePizzaBrut.png" class="imgOpcao">
+                <br>
+                <span class="tituloRestaurante">Nome do Restaurante</span>
+                <br>
+                <span>Categoria de Comida</span>
+                <br>
+                <span>Taxa de Entrega: R$15,00</span>
+                <br>
+                <span>Tempo de Entrega: 40 min</span>
+            </a>
+        </div>
+        <br><br>
+
+        <div class="restauranteOpcao">
+            <a href="">
+                <img src="images/sys_restaurantePaperBird.png" class="imgOpcao">
+                <br>
+                <span class="tituloRestaurante">Nome do Restaurante</span>
+                <br>
+                <span>Categoria de Comida</span>
+                <br>
+                <span>Taxa de Entrega: R$15,00</span>
+                <br>
+                <span>Tempo de Entrega: 40 min</span>
+            </a>
+        </div>
+        <br><br>
+
+        <div class="restauranteOpcao">
+            <a href="">
+                <img src="images/sys_restauranteWikiJapa.png" class="imgOpcao">
+                <br>
+                <span class="tituloRestaurante">Nome do Restaurante</span>
+                <br>
+                <span>Categoria de Comida</span>
+                <br>
+                <span>Taxa de Entrega: R$15,00</span>
+                <br>
+                <span>Tempo de Entrega: 40 min</span>
+            </a>
+        </div>
+        <br><br>
+
+
+
+    </div>
+
+    <div>
+        <input type="button" value="Voltar" onclick="location.href='clienteHome.html'">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Inicio do Rodapé-->
+
+
+
+</body>
+
+</html>
