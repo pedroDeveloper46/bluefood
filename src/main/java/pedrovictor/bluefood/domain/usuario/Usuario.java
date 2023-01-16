@@ -15,6 +15,7 @@ import javax.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import pedrovictor.bluefood.util.StringUtils;
 
 @Getter
 @Setter
@@ -30,7 +31,7 @@ public class Usuario implements Serializable {
 	private Integer id;
 	
 	@NotBlank(message = "O Nome não pode ser vazio")
-	@Size(max = 90, message = "O nome é muito grande")
+	@Size(max = 80, message = "O nome é muito grande")
 	private String nome;
 	
 	@NotBlank(message = "O Email não pode ser vazio")
@@ -43,9 +44,13 @@ public class Usuario implements Serializable {
 	private String senha;
 	
 	@NotBlank(message = "O telefone não pode ser vazio")
-	@Pattern(regexp="[0-9], {11}", message = "O formato do telefone é inválido")
+	@Pattern(regexp="[0-9]{10,11}", message = "O formato do telefone é inválido")
 	@Column(length = 11, nullable = false)
 	private String telefone;
+	
+	public void encryptPassword() {
+		this.senha = StringUtils.encrypt(senha);
+	}
 	
 	
 }

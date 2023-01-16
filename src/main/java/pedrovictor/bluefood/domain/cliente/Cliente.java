@@ -18,11 +18,11 @@ import pedrovictor.bluefood.domain.usuario.Usuario;
 public class Cliente extends Usuario {
 	
     @NotBlank(message = "O CPF não pode ser vazio")
-    @Pattern(regexp = "[0-9] {11}", message = "O CPF possui formato inválido")
+    @Pattern(regexp = "[0-9]{11}", message = "O CPF possui formato inválido")
     @Column(length =11)
 	
     private String cpf;
-	@Pattern(regexp="[0-9] {8}", message = "O CEP possui formato inválido") 
+	@Pattern(regexp="[0-9]{8}", message = "O CEP possui formato inválido") 
 	@Column(length =8)
 	private String cep;
 	

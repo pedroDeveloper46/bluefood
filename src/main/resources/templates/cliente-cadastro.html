@@ -33,7 +33,7 @@
  
 				<label for="cpf">CPF:</label><br> 
 				<input type="text"
-					id="cpf" name="cpf" placeholder="CPF..." th:field="*{cpf}" th:classappend="${#fields.hasErrors('cpf')} ? 'inputErro' : ''"/><br>
+					id="cpf" name="cpf" placeholder="CPF..." th:field="*{cpf}" th:classappend="${#fields.hasErrors('cpf')} ? 'inputErro' : ''" onkeydown="return isNumberKey(event)"/><br>
 				<br> 
 				<div class="msgDeErro" th:if="${#fields.hasErrors('cpf')}">
 				     <span th:errors="*{cpf}"></span>
@@ -51,7 +51,7 @@
 				
 				<label for="telefone">Telefone:</label><br> 
 				<input
-					type="text" id="telefone" name="telefone" placeholder="Telefone..." th:field="*{telefone}" th:classappend="${#fields.hasErrors('telefone')} ? 'inputErro' : ''">
+					type="text" id="telefone" name="telefone" placeholder="Telefone..." th:field="*{telefone}" th:classappend="${#fields.hasErrors('telefone')} ? 'inputErro' : ''" onkeydown="return isNumberKey(event)">
 				<br><br> 
 				<div class="msgDeErro" th:if="${#fields.hasErrors('telefone')}">
 				     <span th:errors="*{telefone}"></span>
@@ -59,22 +59,26 @@
 				
 				<label for="cep">CEP:</label><br> 
 				<input type="text"
-					id="cep" name="cep" placeholder="CEP..." th:field="*{cep}" th:classappend="${#fields.hasErrors('cep')} ? 'inputErro' : ''"/>
+					id="cep" name="cep" placeholder="CEP..." th:field="*{cep}" th:classappend="${#fields.hasErrors('cep')} ? 'inputErro' : ''" onkeydown="return isNumberKey(event)"/>
 				<br><br>
 				<div class="msgDeErro" th:if="${#fields.hasErrors('cep')}">
 				     <span th:errors="*{cep}"></span>
-				</div> 
+				</div>
+
+				<div th:if="${!editMode}">
+						<label for="senha">Senha:</label><br> <input type="password"
+							id="senha" name="senha" placeholder="Senha..."
+							th:field="*{senha}"
+							th:classappend="${#fields.hasErrors('senha')} ? 'inputErro' : ''" /><br>
+						<br>
+						<div class="msgDeErro" th:if="${#fields.hasErrors('senha')}">
+							<span th:errors="*{senha}"></span>
+						</div>
+				</div>
 				
-				
-				<label for="senha">Senha:</label><br> 
-				<input
-					type="password" id="senha" name="senha" placeholder="Senha..." th:field="*{senha}" th:classappend="${#fields.hasErrors('senha')} ? 'inputErro' : ''"/><br>
-				<br>
-				<div class="msgDeErro" th:if="${#fields.hasErrors('senha')}">
-				     <span th:errors="*{senha}"></span>
-				</div> 
-				 
-				
+				<input type="hidden" name="senha" value="*" th:if="${editMode}">
+
+
 				<input type="submit" th:value="${!editMode} ? 'Cadastrar' : 'Alterar'">
 
 			</fieldset>
