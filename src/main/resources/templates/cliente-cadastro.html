@@ -19,7 +19,7 @@
 		</div>
 		<br>
 
-		<form method="POST" action="" th:object="${cliente}" th:action="${!editMode} ? @{/public/cliente/save} : @{private/cliente/save}">
+		<form method="POST" action="" th:object="${cliente}" th:action="${!editMode} ? @{/public/cliente/save} : @{/cliente/save}">
 			<fieldset>
 			    <input type="hidden" th:field="*{id}">
 				
@@ -86,12 +86,16 @@
 
 		</form>
 		<br>
-
-		<div>
-		    <form method="get" th:action="@{/login}">
-		       <input type="submit" value="Cancelar">
-		    </form>
+		
+		<div th:if="${editMode}">
+			<input type="button" value="Voltar" th:onclick="'location.href=\'' + @{/cliente/home} + '\';'">
 		</div>
+		
+		<div th:if="${!editMode}">
+			<input type="button" value="Voltar" th:onclick="'location.href=\'' + @{/login} + '\';'">
+		</div>
+
+		
 
 	</div>
       

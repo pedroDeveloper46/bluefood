@@ -17,10 +17,18 @@
         <div class="divLogotipo">
 
             <span class="spanAuxiliarAlinhamentoVertical"></span>
-            <a href="">
+            <a th:href="${link} == null ? @{/} : ${link}">
                 <img th:src="@{/images/bf_logotipoSistema.png}" class="imgLogo" />
             </a>
 
+        </div>
+        <div class="usuarioLogado" th:if="${#authentication.principal != 'anonymousUser'}">
+            <span class="spanUsuario" th:text="'Olá, ' + ${#authentication.principal.usuario.nome} + '!'"></span>
+            <div th:if="${session.carrinho != null}">
+                 
+                 <a th:href="@{/cliente/carrinho/visualizar}"><img alt="" th:src="@{/images/bf_iconeCarrinho.png}" class="imgCarrinho"> </a>
+                 
+            </div>
         </div>
     </header>
 

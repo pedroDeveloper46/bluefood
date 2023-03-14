@@ -1,5 +1,7 @@
 package pedrovictor.bluefood.infrastructure.web.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +14,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import pedrovictor.bluefood.application.ClienteService;
-import pedrovictor.bluefood.application.RestauranteService;
-import pedrovictor.bluefood.application.ValidationException;
+import pedrovictor.bluefood.application.service.ClienteService;
+import pedrovictor.bluefood.application.service.RestauranteService;
+import pedrovictor.bluefood.application.service.ValidationException;
 import pedrovictor.bluefood.domain.cliente.Cliente;
 import pedrovictor.bluefood.domain.restaurante.Restaurante;
+import pedrovictor.bluefood.domain.restaurante.CategoriaRestauranteRepository;
 
 @Controller
 @RequestMapping(path="/public")
@@ -25,7 +28,11 @@ public class PublicController {
 	@Autowired
 	private ClienteService clienteService;
 	
+	@Autowired	
 	private RestauranteService restauranteService;
+	
+	@Autowired
+	private CategoriaRestauranteRepository categoriaRestauranteRepository;
 	
 	
 	@GetMapping("/cliente/new")
@@ -59,7 +66,11 @@ public class PublicController {
 	}
 	
 	@GetMapping("/restaurante/new")
-	public String newRestaurante() {
+	public String newRestaurante(Model model) {
+		
+		model.addAttribute("restaurante", new Restaurante());
+		ControllerHelper.setEditMode(model, false);		
+		ControllerHelper.addCategoriasToRequest(categoriaRestauranteRepository, model);
 		return "restaurante-cadastro";
 	}
 	
@@ -75,13 +86,15 @@ public class PublicController {
 			} catch (ValidationException e) {
 				// TODO Auto-generated catch block
 				erros.rejectValue("email",null, e.getMessage());
+				return "redirect:/public/restaurante/new";
 			}
 			
 		}
 		
 		
 		ControllerHelper.setEditMode(model, false);
-		return "restaurante-cadastro.html";
+		ControllerHelper.addCategoriasToRequest(categoriaRestauranteRepository, model);
+		return "restaurante-cadastro";
 		
 	}
 

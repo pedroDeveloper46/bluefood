@@ -10,16 +10,16 @@
           <img th:src="@{images/bf_iconeUsuario.png}" class="imgUsuario"/>
           <h1>Autenticação</h1>
           <fieldset>
-            <form method="POST" action="">
-                <input type="text" name="email" placeholder="E-mail..."/>
-                <input type="password" name="senha" placeholder="Senha..."/>
-                <input type="button" value="Entrar" onclick="location.href='clienteHome.html'"/>
+            <form method="POST" th:action="@{/login}">
+                <input type="text" name="username" placeholder="E-mail..."/>
+                <input type="password" name="password" placeholder="Senha..."/>
+                <input type="submit" value="Entrar"/>
             </form>
            </fieldset>
 
            <br/>
-           <div class="msgDeErro">
-            Aqui vai um exemplo de mensagem de Erro
+           <div class="msgDeErro"  th:if="${msg != null}">
+               <span th:text="${msg}"></span>
            </div>
            <br/>
 

@@ -19,25 +19,28 @@ repositories {
 }
 
 dependencies {
-    /*depedência que nos permite usar a JPA*/
+    /*depedï¿½ncia que nos permite usar a JPA*/
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	//implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	runtimeOnly 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	runtimeOnly 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	runtimeOnly 'org.thymeleaf.extras:thymeleaf-extras-java8time'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-web-services'
-	/*depedência que nos permite usar o Thymeleaf e com ele poder trabalhar com as views do projeto*/
+	/*depedï¿½ncia que nos permite usar o Thymeleaf e com ele poder trabalhar com as views do projeto*/
 	//implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	/*Importando a API lombok*/
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	/*depedência que nos permite usar os recursos para acessos de banco de dados*/
+	/*depedï¿½ncia que nos permite usar os recursos para acessos de banco de dados*/
 	runtimeOnly group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
-	/*depedência que nos permite usar a API para fazer validações com as anotaçoes*/
+	/*depedï¿½ncia que nos permite usar a API para fazer validaï¿½ï¿½es com as anotaï¿½oes*/
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	testRuntime 'com.h2database:h2'
 }
 
 test {

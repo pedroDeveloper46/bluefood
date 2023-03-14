@@ -17,14 +17,22 @@ import pedrovictor.bluefood.domain.usuario.Usuario;
 @SuppressWarnings("serial")
 public class Cliente extends Usuario {
 	
-    @NotBlank(message = "O CPF n„o pode ser vazio")
-    @Pattern(regexp = "[0-9]{11}", message = "O CPF possui formato inv·lido")
+    @NotBlank(message = "O CPF n√£o pode ser vazio")
+    @Pattern(regexp = "[0-9]{11}", message = "O CPF possui formato inv√°lido")
     @Column(length =11)
 	
     private String cpf;
-	@Pattern(regexp="[0-9]{8}", message = "O CEP possui formato inv·lido") 
+	@Pattern(regexp="[0-9]{8}", message = "O CEP possui formato inv√°lido") 
 	@Column(length =8)
 	private String cep;
+	
+	
+	public String getFormattedCep() {
+		
+		return cep.substring(0, 5) + '-' + cep.substring(5);
+		
+	
+	}
 	
 	
 

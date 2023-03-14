@@ -1,4 +1,4 @@
-package pedrovictor.bluefood.application;
+package pedrovictor.bluefood.application.service;
 
 @SuppressWarnings("serial")
 public class ValidationException extends Exception {

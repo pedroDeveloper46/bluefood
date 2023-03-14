@@ -174,10 +174,12 @@ td {
 }
 
 .restauranteOpcao {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+    background-color: #ffffff;
+	width: 400px;
+	height: auto;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .msgDeSucesso {
@@ -204,4 +206,11 @@ td {
 
 .inputErro {
     border: 2px solid #ff2828;
+}
+
+#divLarguraPadrao
+{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
 }
