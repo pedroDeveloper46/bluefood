@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html
+   xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:th="http://www.thymeleaf.org" layout:decorate="~{Layout}">
+
+
+<body>
+     <div layout:fragment="content">
+        <div>
+          <img th:src="@{images/bf_iconeUsuario.png}" class="imgUsuario"/>
+          <h1>Autenticação</h1>
+          <fieldset>
+            <form method="POST" th:action="@{/login}">
+                <input type="text" name="username" placeholder="E-mail..."/>
+                <input type="password" name="password" placeholder="Senha..."/>
+                <input type="submit" value="Entrar"/>
+            </form>
+           </fieldset>
+
+           <br/>
+           <div class="msgDeErro"  th:if="${msg != null}">
+               <span th:text="${msg}"></span>
+           </div>
+           <br/>
+
+           
+           <form method="get" th:action="@{/public/cliente/new}">
+                <input type="submit" value="Gostaria de criar a minha conta de Usuário" />
+           </form><br/>
+           
+           <form method="get" th:action="@{/public/restaurante/new}">
+                <input type="submit" value="Gostaria de criar a minha conta de Restaurante" />
+           </form><br/>
+           
+           
+
+
+        </div>
+        
+     </div>
+
+    <!--Inicio do Rodapé-->
+
+
+
+</body>
+
+</html>

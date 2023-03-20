@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html
+   xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueFood</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/bf_estiloSistema.css}">
+    <script type="text/javascript" th:src=@{/js/script.js}></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="divLogotipo">
+
+            <span class="spanAuxiliarAlinhamentoVertical"></span>
+            <a th:href="${link} == null ? @{/} : ${link}">
+                <img th:src="@{/images/bf_logotipoSistema.png}" class="imgLogo" />
+            </a>
+
+        </div>
+        <div class="usuarioLogado" th:if="${#authentication.principal != 'anonymousUser'}">
+            <span class="spanUsuario" th:text="'Olá, ' + ${#authentication.principal.usuario.nome} + '!'"></span>
+            <div th:if="${session.carrinho != null}">
+                 
+                 <a th:href="@{/cliente/carrinho/visualizar}"><img alt="" th:src="@{/images/bf_iconeCarrinho.png}" class="imgCarrinho"> </a>
+                 
+            </div>
+        </div>
+    </header>
+
+    <br/><br/>
+    <!--Fim do cabeçalho-->
+    
+    <!--Conteúdo-->
+    <div layout:fragment="content">
+       
+    </div>
+    
+
+    
+
+
+    <!--Inicio do Rodapé-->
+    <br/> <br/>
+
+
+
+</body>
+
+</html>
